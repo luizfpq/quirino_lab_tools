@@ -19,7 +19,8 @@ if [ "$#" -lt 2 ]; then
 fi
 
 CHAVE_SSH=$1
+COMANDO_GIT=$2
 shift
-COMANDO_GIT=$@
+shift 
 
-GIT_SSH_COMMAND="ssh -i $CHAVE_SSH" git $COMANDO_GIT
+GIT_SSH_COMMAND="ssh -i $CHAVE_SSH" git $COMANDO_GIT "$@"
